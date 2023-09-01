@@ -63,7 +63,7 @@ export function App() {
             if (newValue === null) {
               return
             }
-            else if (newValue.firstName == "All") {
+            else if (newValue.firstName === "All") {
               await loadAllTransactions()
               setLoadType('All')
             } else {

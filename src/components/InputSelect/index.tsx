@@ -56,24 +56,23 @@ export function InputSelect<TItem>({
               {label}
             </label>
             <div className="RampBreak--xs" />
-            <div
-              className="RampInputSelect--input"
-              onClick={(event) => {
-                setDropdownPosition(getDropdownPosition(event.target))
-                toggleProps.onClick(event)
-              }}
-            >
-              {inputValue}
-            </div>
-
-            <div
-              className={classNames("RampInputSelect--dropdown-container", {
-                "RampInputSelect--dropdown-container-opened": isOpen,
-              })}
-              {...getMenuProps()}
-              style={{ top: dropdownPosition.top, left: dropdownPosition.left }}
-            >
-              {renderItems()}
+              <div
+                className="RampInputSelect--input"
+                onClick={(event) => {
+                  setDropdownPosition(getDropdownPosition(event.target))
+                  toggleProps.onClick(event)
+                }}
+              >
+                {inputValue}
+                <div
+                  className={classNames("RampInputSelect--dropdown-container", {
+                    "RampInputSelect--dropdown-container-opened": isOpen,
+                  })}
+                  {...getMenuProps()}
+                  style={{ top: dropdownPosition.top, left: dropdownPosition.left }}
+                >
+                  {renderItems()}
+                </div>
             </div>
           </div>
         )
